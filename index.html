@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#168bd0">
+  <meta name="description" content="Renova-me Kids: histórias para ler, aprender e guardar no coração. Três livros infantis com leituras diárias.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Renova-me Kids">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Renova-me Kids</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Renova-me Kids - início">
+      <img src="./icon-192.png" alt="" class="brand-logo">
+      <span><strong>RENOVA-ME <b>KIDS</b></strong><small>Histórias para ler, aprender e crescer com Deus</small></span>
+    </a>
+    <button id="installBtn" class="install-btn" hidden>＋ Instalar</button>
+  </header>
+  <main>
+    <section id="home" class="home-view">
+      <section class="welcome">
+        <img class="hero-image" src="./imagens/hero-renovame-kids.png" alt="Renova-me Kids: um menino e um robô sorridentes lendo um livro em um jardim colorido">
+        <div class="welcome-message">
+          <p class="eyebrow">UM NOVO DIA, UMA NOVA DESCOBERTA</p>
+          <h1>Que história vamos <span>descobrir hoje?</span></h1>
+          <p class="welcome-copy">Abra um livro, encontre uma aventura e descubra ensinamentos para levar no coração.</p>
+          <div class="today-pill"><span class="today-dot"></span><span id="homeDate"></span></div>
+        </div>
+      </section>
+      <section class="library">
+        <div class="section-heading"><div><p class="eyebrow">TRÊS LIVROS ESPECIAIS</p><h2>Escolha sua leitura!</h2></div><span class="heading-star">🌈</span></div>
+        <div id="moduleGrid" class="module-grid" aria-live="polite"><div class="loading">Preparando os livros… ✨</div></div>
+      </section>
+      <p class="home-note">Todos os dias tem uma nova leitura esperando por você. E os outros capítulos continuam aqui para visitar quando quiser!</p>
+    </section>
+    <section id="reader" class="reader-view" hidden>
+      <button id="backBtn" class="back-btn">← Voltar aos livros</button>
+      <div class="reader-book-cover"><img id="readerCover" src="" alt="Capa do livro"><div class="reader-book-meta"><p class="eyebrow" id="readerModuleLabel">LIVRO</p><h1 id="bookTitle">Título do livro</h1><p class="date-label" id="dateLabel"></p></div></div>
+      <article class="reading-card">
+        <div class="reading-tools"><span class="reading-tag">✨ HORA DA HISTÓRIA</span><div class="font-tools" aria-label="Tamanho das letras"><button id="smaller" aria-label="Diminuir letras">A−</button><button id="larger" aria-label="Aumentar letras">A+</button></div></div>
+        <h2 id="storyTitle" class="story-title"></h2>
+        <div id="content" class="reading-content"></div>
+        <div class="reader-footer-art">⭐ <span>Continue descobrindo!</span> ⭐</div>
+      </article>
+      <nav class="navigation" aria-label="Navegação entre leituras"><button id="prevBtn" class="nav-btn previous">← Anterior</button><span id="count" class="count-label">Leitura 1 de 1</span><button id="nextBtn" class="nav-btn next">Próxima →</button></nav>
+      <button id="todayBtn" class="today-btn">☀️ Voltar para a leitura de hoje</button>
+      <p class="reader-hint">Você pode passear por todos os textos deste livro usando os botões de navegação.</p>
+    </section>
+  </main>
+  <footer><img src="./icon-192.png" alt="" class="footer-logo"><strong>Renova-me Kids</strong><span>Histórias para ler, aprender e guardar no coração.</span><small>Uma iniciativa Renova-me Deus Meu</small></footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>

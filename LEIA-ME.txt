@@ -1,0 +1,78 @@
+RENOVA-ME KIDS — APLICATIVO PWA
+================================
+
+IDENTIDADE
+Nome do aplicativo: Renova-me Kids
+Marca: Renova-me Deus Meu
+Slogan: Histórias para ler, aprender e guardar no coração.
+
+O aplicativo possui três livros:
+1. A Vida é Assim — 52 textos
+2. Histórias da Bíblia — 50 textos
+3. É sobre Confiar — 95 textos
+Total: 197 textos.
+
+Os textos foram importados dos arquivos JSON enviados e preservados no diretório dados/.
+As capas individuais e a identidade visual do app ficam em imagens/. As imagens foram ajustadas para aparecerem inteiras, sem cortes nos títulos, personagens ou textos das capas. O ícone quadrado
+icon-192.png e icon-512.png é utilizado na instalação do aplicativo.
+
+FUNCIONAMENTO DAS LEITURAS DIÁRIAS
+----------------------------------
+A leitura inicial de cada livro corresponde a 15/11/2026. A partir dessa data,
+o índice avança um texto por dia, de forma independente em cada livro. O cálculo
+usa a data local do aparelho. Ao chegar à meia-noite, o app atualiza a leitura do dia
+se estiver aberto; ao voltar ao app ou atualizar a página, recalcula a data.
+
+Os botões Anterior e Próxima permitem navegar pelos textos de cada livro. O botão
+“Voltar para a leitura de hoje” reaparece quando o leitor está consultando outro texto.
+Os controles A− e A+ ajustam o tamanho das letras.
+
+TESTAR NO VS CODE
+-----------------
+1. Extraia o arquivo ZIP.
+2. Abra a pasta Renova-me_Kids no VS Code.
+3. Instale a extensão Live Server, caso ainda não tenha.
+4. Clique com o botão direito em index.html e selecione “Open with Live Server”.
+5. Teste os três livros, as capas, os botões Anterior/Próxima e A−/A+.
+
+Não abra index.html diretamente pelo Explorador de Arquivos (file://). Use Live Server
+ou outro servidor local para que o navegador carregue os arquivos JSON e registre
+o Service Worker.
+
+PUBLICAR NO GITHUB PAGES
+------------------------
+1. Crie um repositório no GitHub.
+2. Envie o conteúdo desta pasta para a raiz do repositório (não envie o ZIP fechado).
+3. Em Settings > Pages, escolha Deploy from a branch.
+4. Selecione a branch main e a pasta / (root), depois salve.
+5. Aguarde a publicação HTTPS e abra o endereço fornecido pelo GitHub.
+
+INSTALAR NO CELULAR
+-------------------
+Android: abra o endereço publicado no Chrome e escolha “Instalar aplicativo” ou
+“Adicionar à tela inicial”.
+iPhone: abra o endereço publicado no Safari, toque em Compartilhar e escolha
+“Adicionar à Tela de Início”.
+
+A instalação PWA exige HTTPS (ou localhost durante o desenvolvimento). O projeto
+inclui manifest.webmanifest, ícones e Service Worker com cache dos textos e imagens.
+
+ALTERAR A DATA INICIAL DA PROGRAMAÇÃO
+------------------------------------
+No arquivo app.js, localize:
+const DAILY_START = new Date(2026, 10, 15);
+
+No JavaScript, os meses começam em zero: 10 significa novembro. Altere a data se
+desejar outro início da rotação. O primeiro texto de cada livro será exibido nessa data.
+
+ESTRUTURA
+---------
+index.html                 Página principal
+style.css                  Aparência e responsividade
+app.js                     Navegação e programação diária
+manifest.webmanifest       Identidade PWA
+service-worker.js          Cache e funcionamento offline
+dados/                     Os três arquivos JSON
+imagens/                   Logo, imagem de abertura e capas dos livros
+icon-192.png               Ícone de instalação 192x192
+icon-512.png               Ícone de instalação 512x512

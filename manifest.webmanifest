@@ -1,0 +1,16 @@
+{
+  "name": "Renova-me Kids — Histórias para ler, aprender e crescer com Deus",
+  "short_name": "Renova-me Kids",
+  "description": "Três livros infantis com leituras diárias: A Vida é Assim, Histórias da Bíblia e É sobre Confiar.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e9f8ff",
+  "theme_color": "#168bd0",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
