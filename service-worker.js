@@ -1,4 +1,4 @@
-const CACHE_NAME = "renovame-kids-v3";
+const CACHE_NAME = "renovame-kids-v4";
 const CORE_FILES = ["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./imagens/icon-source.png", "./imagens/hero-renovame-kids.png", "./imagens/capa-a-vida-e-assim.png", "./imagens/capa-historias-da-biblia.png", "./imagens/capa-e-sobre-confiar.png", "./dados/a_vida_e_assim.json", "./dados/historias_da_biblia.json", "./dados/e_sobre_confiar.json"];
 self.addEventListener("install", event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_FILES)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim())); });
